@@ -10,6 +10,7 @@
 #define PARTICLE_FILTER_H_
 
 #include "helper_functions.h"
+#include <unordered_map>
 
 struct Particle {
 
@@ -37,6 +38,9 @@ class ParticleFilter {
 	
 	// Vector of weights of all particles
 	std::vector<double> weights;
+
+	// map landmarks by id
+	std::unordered_map<int, Map::single_landmark_s> mapLandmarksById;
 	
 public:
 	
